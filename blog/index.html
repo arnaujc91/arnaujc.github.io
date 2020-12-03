@@ -25,6 +25,9 @@ pagination:
       <li>
         <h3><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
         <p class="post-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
+        {% if post.img %}
+        <img class="img-fluid z-depth-1 rounded" src="{{ post.img | relative_url }}" alt="post thumbnail">
+        {% endif %}
         <p>{{ post.description }}</p>
       </li>
     {% endfor %}
