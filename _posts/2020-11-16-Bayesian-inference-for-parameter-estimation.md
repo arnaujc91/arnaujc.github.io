@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bayesian inference for parameter estimation
-img: /assets/img/12.jpg
+image: /assets/img/12.jpg
 ---
 
 
