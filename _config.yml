@@ -61,8 +61,8 @@ google_analytics:  # out your google-analytics code
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Arnau's blog  # your blog must have a name for it to show up in the nav bar
-blog_description: This is my blog about Physics and Deep Learning
+blog_name: Blog  # your blog must have a name for it to show up in the nav bar
+blog_description: about Physics and Deep Learning
 permalink: /blog/:year/:title/
 
 # Pagination
