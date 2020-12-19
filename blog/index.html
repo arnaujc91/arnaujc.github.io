@@ -28,6 +28,7 @@ pagination:
           <a href="{{ post.url | relative_url }}">
           <img class="img-fluid z-depth-1 rounded" src="{{ post.image | relative_url }}" href="{{ post.url | relative_url }}"/>
           </a>
+          <p class="post-meta">{{ post.date | date: '%B %d, %Y' }}</p>
         </div>
         {% endif %}
       <div class="clearfix">
@@ -37,7 +38,9 @@ pagination:
             </a>
           </h3>
           <p class="post-meta-description">{{ post.description }}</p>
-            <p class="post-meta">{{ post.date | date: '%B %d, %Y' }}</p>
+          {% unless post.image %}
+          <p class="post-meta">{{ post.date | date: '%B %d, %Y' }}</p>
+          {% endunless %}
           </div>
       </li>
     {% endfor %}

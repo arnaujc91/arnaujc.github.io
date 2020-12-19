@@ -235,8 +235,9 @@ footer.sticky-bottom {
   margin-bottom: 40px;
   padding: 0;
   img{
-    width:100%;
-    max-width:200px;
+    width:200px;
+    height: 130px;
+    // max-width:200px;
     margin-right:50px;
   }
   li {
@@ -248,6 +249,7 @@ footer.sticky-bottom {
       color: $grey-color;
       font-size: 0.875rem;
       margin-bottom: 0;
+      margin-top: 10px;
     }
     a {
       color: var(--global-text-color);
