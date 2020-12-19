@@ -2,6 +2,9 @@
 layout: post
 title: Bayesian inference for parameter estimation
 image: /assets/img/bayes.jpg
+description: Simple example of the Bayesian view of probability. We also show how the prior beliefs about the phenomena influence the posterior in the case of tossing coins. 
+
+
 ---
 
 

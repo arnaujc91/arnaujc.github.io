@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Naive Bayes for text classification
+image: /assets/img/TextClassification.png
 description: Naive Bayes explained and used in an example for text classification. Coded from scratch for illustration purposes and also with scikitlearn.
 ---
 
