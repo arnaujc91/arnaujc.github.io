@@ -65,17 +65,15 @@ Let's plot the Priors for each case:
 
 <img class="img-fluid center" src="{{ site.baseurl }}/assets/img/prior.png">
 
-
-
-
 Now we flip the coin $N_1 = 30$ times and let's see what happens to the posteriors for two different outcomes: 
 - **Case one**: 30 tosses, 15 heads,
 - **Case two**: 30 tosses, 6 heads.
 
-<div class="row mt-3">
-        <img class="img-fluid" src="{{ site.baseurl }}/assets/img/Bayes_30_15.png" width="400" height="200">
-        <img class="img-fluid" src="{{ site.baseurl }}/assets/img/Bayes_30_6.png" width="400" height="200">
+<div class="row mt-5">
+        <img class="img-fluid img-responsive" src="{{ site.baseurl }}/assets/img/Bayes_30_15.png">
+        <img class="img-fluid img-responsive" src="{{ site.baseurl }}/assets/img/Bayes_30_6.png">
 </div>
+
 
 **Case one**: We see that when the data points to the case where the coin is fair, both the pysicist and the skeptic give the highest probability to $\theta = 1/2$. But there is a difference, which is the width of the distributions. As you can see the physicist has a narrower distribution around $\theta = 1/2$ meaning that he is more confident than the skeptic that the coin is fair. On the other hand the pessimist is still thinking that the coin is biased, he believes that the coin is not 100% biased but he does not have a high confidence that the true value of $\theta$ is $1/2$.
 
@@ -90,7 +88,22 @@ P(\theta \mid \mathcal{D}_2) = \frac{P(\mathcal{D}_2\mid \theta)\times P(\theta\
 $$
 
 As you can see you can keep updating your beliefs in the parameter $\theta$ every time that you observe new data.
+After $m$ iterations we would have:
+
+$$
+P(\theta \mid \mathcal{D}_{m+1}) \propto P(\theta) \prod_{i = 1}^{m} P(\mathcal{D}_i\mid \theta) \equiv  P(\theta) \mathcal{L}_m (\theta)
+$$  
+
+Where the function $\mathcal{L}_m$ is again the likelihood function after $m$ samples of data have been observed.
+
+So, in general after $m$ observations we will have:
+
+$$
+P(\theta \mid \mathcal{D}_m, \ldots , \mathcal{D}_1) = \frac{P(\mathcal{D}_m, \ldots , \mathcal{D}_1\mid \theta)P(\theta)}{P(\mathcal{D}_1, \ldots , \mathcal{D}_m)}
+$$
+
 
 ## References 
 
 - [Probability concepts explained: Bayesian inference for parameter estimation.](https://towardsdatascience.com/probability-concepts-explained-bayesian-inference-for-parameter-estimation-90e8930e5348)
+- [Bayesian Inference - Carnegie Mellon University](http://www.stat.cmu.edu/~larry/=sml/Bayes.pdf)
