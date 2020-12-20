@@ -70,8 +70,12 @@ Now we flip the coin $N_1 = 30$ times and let's see what happens to the posterio
 - **Case two**: 30 tosses, 6 heads.
 
 <div class="row mt-5">
+    <div class="col-sm mt-3 mt-md-0">
         <img class="img-fluid img-responsive" src="{{ site.baseurl }}/assets/img/Bayes_30_15.png">
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
         <img class="img-fluid img-responsive" src="{{ site.baseurl }}/assets/img/Bayes_30_6.png">
+    </div>
 </div>
 
 
