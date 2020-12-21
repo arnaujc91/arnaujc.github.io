@@ -6,7 +6,7 @@ permalink: /
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.png
   address: >
 
 news: true  # includes a list of news items
