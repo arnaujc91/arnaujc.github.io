@@ -16,7 +16,9 @@ events. First we have to pick a probability distribution, and second we need to 
 which are the paremeters ($\theta$) that fit the data the best.
 
 Fitting the parameters can be done using Bayesian (or Frequentist) inference. Choosing the model will be 
-up to you and the success of it will depend on your intuition. Let's start explaining Bayes' formula:
+up to you and the success of it will depend on your intuition.
+
+Let's start explaining Bayes' formula:
 
 
 $$
@@ -125,8 +127,8 @@ $$
 \hat{\theta} = \underset{\theta}{\operatorname{arg\;max}}\,  \mathcal{L}_m (\theta)
 $$
 
-
 ## References 
 
 - [Probability concepts explained: Bayesian inference for parameter estimation.](https://towardsdatascience.com/probability-concepts-explained-bayesian-inference-for-parameter-estimation-90e8930e5348)
 - [Bayesian Inference - Carnegie Mellon University](http://www.stat.cmu.edu/~larry/=sml/Bayes.pdf)
+- [Statistical Inference Showdown: The Frequentists VS The Bayesians](https://www.freecodecamp.org/news/statistical-inference-showdown-the-frequentists-vs-the-bayesians-4c1c986f25de/)

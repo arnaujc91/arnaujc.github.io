@@ -96,7 +96,6 @@ train_data = fetch_20newsgroups(subset="train", categories=text_categories)
 test_data = fetch_20newsgroups(subset="test", categories=text_categories)
 
 from sklearn.feature_extraction.text import CountVectorizer
-# from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = CountVectorizer(min_df=10, token_pattern= '[a-zA-Z]+')
 X_train = vectorizer.fit_transform(train_data.data[:])
 X_test = vectorizer.transform(test_data.data)
