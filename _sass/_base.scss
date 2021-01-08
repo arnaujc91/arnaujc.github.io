@@ -76,6 +76,8 @@ a, table.table a {
   }
 }
 
+
+
 .post-description {
   margin-bottom: 2rem;
   font-size: 0.875rem;
@@ -232,6 +234,13 @@ footer.sticky-bottom {
   h1 {
     color: var(--global-theme-color);
     font-size: 4rem;
+  }
+}
+
+.post-content{
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    margin-top: 35px;
   }
 }
 
