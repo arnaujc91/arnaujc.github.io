@@ -1,14 +1,14 @@
 /******************************************************************************
  * Content
  ******************************************************************************/
-
 //  Google font for the About page
 .about {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $about-font;
   margin-bottom: 40px;
 }
 
  body {
+  // font-family: $about-font;
    padding-bottom: 70px;
    color: var(--global-text-color);
    background-color: var(--global-bg-color);
