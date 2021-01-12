@@ -39,7 +39,7 @@ Bottom line: given a group $G$ if this group is a symmetry of the quantum system
 ## Projective Representations
 
 Let's start talking about what a represenation is:
-> a representation of a group $G$ on a vector space $V$ is a map $\rho: \, G \to \text{GL} (V)$, such that the group operation is preserved $\rho(g_1 \cdot g_2) = \rho(g_1)\cdot \rho(g_2)$. But as Wigner told us, for quantum mechanics we are not interested in any representation but rather just on the subset of representations which are (anti)unitary. Therefore the map is not the general map $\rho: \,G \to \text{GL}(V)$ but instead $\pi: \, G \to \text{U}(V)$ where $\text{U}$ is the set of unitary matrices in the vector space $V$.
+a representation of a group $G$ on a vector space $V$ is a map $\rho: \, G \to \text{GL} (V)$, such that the group operation is preserved $\rho(g_1 \cdot g_2) = \rho(g_1)\cdot \rho(g_2)$---i.e. the map is a group homomorphism. But as Wigner told us, for quantum mechanics we are not interested in any representation but rather just on the subset of representations which are (anti)unitary. Therefore the map is not the general map $\rho: \,G \to \text{GL}(V)$ but instead $\pi: \, G \to \text{U}(V)$ where $\text{U}(V)$ is the set of unitary matrices in the vector space $V$.
 
 
 But remember in your first course about quantum mechanics, they taught you that two vectors that differ by a phase are equivalent from a physical point of view, namely they represent the same physical state. Therefore we are allowed to relax slightly the conditions imposed by a representation. Instead if we find a map $\pi$ which is the analogous of a representation but up to a phase:
@@ -48,19 +48,53 @@ $$
 U(g_1)\cdot U(g_2) = e^{\phi(g_1, g_2)} U(g_1 \cdot g_2)
 $$
 
-we are still good to go. These maps are called [projective representations](https://en.wikipedia.org/wiki/Projective_representation). You already know that
-
-$$
-U(R_\pi) \cdot U(R_\pi) = e^{i\pi} U(1) \implies \phi(R_\pi, R_\pi) =  \pi
-$$
-
-
+we are still good to go. 
 
 Remember what I told you in the previous section that $SO(3)$ has a representation in every vector space of odd dimension $d$? It turns out that $SO(3)$ has a projective representation for all vector spaces of integer dimension $d \in \mathbb{N}$. The representations for even dimension are called [spinorial representations](https://en.wikipedia.org/wiki/Spin_representation). More generally, for any projective unitary representation of $SO(3)$ we have:
 
-$$
+
+\begin{equation}
 U(R_1)\cdot U(R_2) = \pm U(R_1 \cdot R_2)
-$$
+\label{eq:projective}
+\end{equation}
+
+The representations of odd dimension they always have a positive sign (integer spin) while the representations of even dimensions (half integer spin) wil have a positive or negative sign depending on how the elements $R_1$ and $R_2$ are connected in the corresponding group.
 
 
 ## Relation between SU(2) and SO(3)
+
+Projective representations can arise in two ways:
+
+- Algebraically: if the central charge of the Lie algebra can not be removed.
+
+- Topologically: If the group is not simply connected.
+
+Because the Lie algebra of $SO(3)$ is semi-simple there is a general theorem which states that any central charges in semi-simple Lie algebras may always be removed by a redifinition of its generators. On the other hand $SO(3)$ is not simply connected, therefore all its projective representations originate from the topology. In fact, $SO(3)$ is *doubly* connected, informally this means that for any loop to be contractible to a point it must go around the manifold twice. 
+
+Now let's listen to the master, Weinberg explains (page 90):
+
+>  Even though a Lie group $G$ may not be simply connected, it can always be expressed as $C/H$, where $C$ is a simply connected group known as the [**universal covering group**](https://en.wikipedia.org/wiki/Covering_group) of $G$, and $H$ is an invariant subgroup of $C$.
+
+In the case of $SO(3)$ the universal cover is $SU(2)$ and the invariant subgroup is $\mathbb{Z}_2 = \\{1,-1\\}$. The universal cover has no intrinsic projective representations, therefore all its representations are in the same footing, i.e. there is no phase anymore.
+
+## Differences between SU(2) and SO(3) invariance
+
+Here comes the tricky part. Again we must quote Weinberg (p. 89):
+
+> Equation \eqref{eq:projective} imposes a [superselection rule](https://arxiv.org/pdf/0710.1516.pdf): we must not mix states of integer and half-integer spin.
+
+
+and again:
+
+> Instead of working with projective representations and imposing a superseleciton rule, we can just as well expand the Rotation group, taking it as $SU(2)$ itself, instead of $SU(2)/Z_2$ as before. Ordinary rotation invariance forbids transitions between states of integer and half-integer total spins, so the only difference is that now the group is simply-connected, and it therefore has only ordinary representations, not projective representations, so that we cannot infer a superselection rule.
+
+So be careful because while the original $SO(3)$ group imposed superselection rules---due to its projective representations---the universal cover $SU(2)$ do *not* impose them. Then it continues:
+
+> it may or it may not be possible to prepare physical systems in arbitrary superpositions of states, but one cannot settle the question by reference to symmetry principles, because whatever one thinks the symmetry group of nature may be, there is always another group whose consequnces are identical except for the absence of superselection rules.
+
+The corollary is:
+
+$$
+SU(2) \text{ invariance} + \text{superselection rules} 
+\equiv SO(3) \text{ invariance} 
+$$
