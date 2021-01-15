@@ -13,8 +13,7 @@ news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
-
-I am a software developer who studied theoretical physics. I did my bachelor's degree in Barcelona at the [UAB](https://www.uab.cat/) and my Master of Science degree at the [LMU](https://www.uni-muenchen.de/index.html) in Munich. Passionate about deep learning, physics and mathematics.
+I am a software developer who studied theoretical physics. I did my bachelor’s degree at the [UAB](https://www.uab.cat/) in Barcelona and my Master of Science at the [LMU](https://www.uni-muenchen.de/index.html) in Munich. I am passionate about deep learning, physics and mathematics.
 
  My main programming language is Python and the libraries I use more frequently are: PyTorch, Fastai, Scikitlearn, Pandas, Numpy and Tensorflow. Furthermore I have some experience with Java, C and a tiny bit of front end technologies.
 

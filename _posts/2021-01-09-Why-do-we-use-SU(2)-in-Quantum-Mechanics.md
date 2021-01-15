@@ -7,7 +7,7 @@ description: When we study rotation symmetry in quantum mechanics SU(2) is tipic
 
 ## Symmetries and Quantum Mechanics
 
-Symmetries are a really powerful concept commonly used in physics. Think about [Noether's theorem](https://en.wikipedia.org/wiki/Noether%27s_theorem), for every symmetry of the system there is a corresponding conserved quantity. This conserved quantites put certain constraints on the dynamics of the system, i.e. not everything is allowed and this is pretty good news for us, as it narrows down the set of possible solutions. Take a simple example, the [ellastic collision](https://en.wikipedia.org/wiki/Elastic_collision) of two objects in classical mechanics; just using conservation of momentum and energy even a secondary school student can solve this problem. In particle physics, if you have charge conservation even though the particle can desintegrate into many other lighter particles, you know that the sum of the charges must still be the same---again restricting the space of possible solutions.
+Symmetries are a really powerful concept commonly used in physics. Think about [Noether's theorem](https://en.wikipedia.org/wiki/Noether%27s_theorem), for every symmetry of the system there is a corresponding conserved quantity. These conserved quantites put certain constraints on the dynamics of the system, i.e. not everything is allowed and this is pretty good news for us, as it narrows down the set of possible solutions. Take a simple example, the [ellastic collision](https://en.wikipedia.org/wiki/Elastic_collision) of two objects in classical mechanics; just using conservation of momentum and energy even a secondary school student can solve this problem. In particle physics, if you have charge conservation even though the particle can desintegrate into many other lighter particles, you know that the sum of the charges must still be the same---again restricting the space of possible solutions.
 
 Furthremore, symmetries have a group structure, in other words, the combination of two symmetry transformations is a symmetry transformation of the same kind (two composed rotations are still a rotation). Therefore usually symmetries and groups come hand in hand, and every symmetry is represented by a group. In this particular case we are going to talk about rotations or in more mathematical terms the $SO(3)$ group. 
 
@@ -34,7 +34,7 @@ $$
 
 on the states of the Hilbert space. The set of symmetry transformations are usually defined via a group action---if you are not familiar with group theory I strongly recommend you to take a look at [this](https://arxiv.org/pdf/math-ph/0005032.pdf) lecture notes from Brian C. Hall. So given a group which represents the symmetry we want, in this case $SO(3)$, we need to find those matrices $U$ which fulfill Wigner's theorem, i.e. we need to find a map $SO(3) \to U(n)$ where $U(n)$ is the set of $n \times n$ unitary matrices. This is called a **unitary representation**---again if you do not know what a represenation from a group is check the lectures from Brian. 
 
-Bottom line: given a group $G$ if this group is a symmetry of the quantum system there must exist *at least* one unitary representation of the group. But given a group how many inequivalent and **irreducible** representations are there? Well in the case of $SO(3)$ it is well known that there exist a unitary irreducible---any representation can be decomposed as a direct sum of irreducible ones---representation for every odd dimension $d$, i.e. for every $d = 2l+1$, with $l\in \mathbb{N}$. 
+Bottom line: given a group $G$ if this group is a symmetry of the quantum system there must exist *at least* one unitary representation of the group. But given a group how many inequivalent and **irreducible** representations are there? Well in the case of $SO(3)$ it is well known that there exists a unitary irreducible---any representation can be decomposed as a direct sum of irreducible ones---representation for every odd dimension $d$, i.e. for every $d = 2l+1$, with $l\in \mathbb{N}$. 
 
 ## Projective Representations
 
@@ -45,7 +45,7 @@ a representation of a group $G$ on a vector space $V$ is a map $\rho: \, G \to \
 But remember in your first course about quantum mechanics, they taught you that two vectors that differ by a phase are equivalent from a physical point of view, namely they represent the same physical state. Therefore we are allowed to relax slightly the conditions imposed by a representation. Instead if we find a map $\pi$ which is the analogous of a representation but up to a phase:
 
 $$
-U(g_1)\cdot U(g_2) = e^{\phi(g_1, g_2)} U(g_1 \cdot g_2)
+U(g_1)\cdot U(g_2) = e^{i\phi(g_1, g_2)} U(g_1 \cdot g_2)
 $$
 
 we are still good to go. 
@@ -65,9 +65,9 @@ The representations of odd dimension they always have a positive sign (integer s
 
 Projective representations can arise in two ways:
 
-- Algebraically: if the central charge of the Lie algebra can not be removed.
+- Algebraically: if the *central charge* of the Lie algebra can not be removed.
 
-- Topologically: If the group is not simply connected.
+- Topologically: If the group is not *simply connected*.
 
 Because the Lie algebra of $SO(3)$ is semi-simple there is a general theorem which states that any central charges in semi-simple Lie algebras may always be removed by a redifinition of its generators. On the other hand $SO(3)$ is not simply connected, therefore all its projective representations originate from the topology. In fact, $SO(3)$ is *doubly* connected, informally this means that for any loop to be contractible to a point it must go around the manifold twice. 
 
@@ -86,15 +86,35 @@ Here comes the tricky part. Again we must quote Weinberg (p. 89):
 
 and again:
 
-> Instead of working with projective representations and imposing a superseleciton rule, we can just as well expand the Rotation group, taking it as $SU(2)$ itself, instead of $SU(2)/Z_2$ as before. Ordinary rotation invariance forbids transitions between states of integer and half-integer total spins, so the only difference is that now the group is simply-connected, and it therefore has only ordinary representations, not projective representations, so that we cannot infer a superselection rule.
+> Instead of working with projective representations and imposing a superseleciton rule, we can just as well expand the Rotation group, taking it as $SU(2)$ itself, instead of $SU(2)/Z_2$ as before. Ordinary rotation invariance forbids transitions between states of integer and half-integer total spins, so the only difference is that now the group is simply-connected, and it therefore has only ordinary representations, not projective representations, so that we cannot infer a superselection rule. This does not mean that we actually can prepare physical systems in linear combinations of states of integer and half-integer spin, but only that the observed rotation invariance of nature cannot be used to show that such superpositions are impossible.
 
-So be careful because while the original $SO(3)$ group imposed superselection rules---due to its projective representations---the universal cover $SU(2)$ do *not* impose them. Then it continues:
+So be careful because while the original $SO(3)$ group imposed a superselection rule (SSR)---due to its projective representations---the universal cover $SU(2)$ do *not*. In both cases the total spin is a conserved quantity, the difference relies in the fact that (in principle) one could prepare a system in a superposition of states of integer and half-integer spin in the case of $SU(2)$ while this seems to be impossible for $SO(3)$. In both cases though if the state is in a pure fermionic state at some instance of time, it will remain a pure fermionic state at any other instance of time.
+
+<!-- It's worth expliclty stating the difference between a superselection rule (SSR) and a selection rule (SR). Two states $\lvert \psi_1 \rangle, \lvert \psi_2 \rangle $ are separated by a SR/SSR if:
+
+$$
+\begin{aligned}
+\text{SSR} &: \quad \langle \psi_1 | H | \psi_2 \rangle = 0 \\[2mm]
+\text{SR} &: \quad  \langle \psi_1 | A | \psi_2 \rangle = 0  \quad \text{for ALL observables A}.
+\end{aligned}
+$$ -->
+
+ Then it continues:
 
 > it may or it may not be possible to prepare physical systems in arbitrary superpositions of states, but one cannot settle the question by reference to symmetry principles, because whatever one thinks the symmetry group of nature may be, there is always another group whose consequnces are identical except for the absence of superselection rules.
 
-The corollary is:
+I must admit that this last quote confuses me. If the superposition was possible, this would automatically rule out $SO(3)$, so it seems to me that one can indeed settle the question by symmetry principles. What does Weinberg mean by that? I do not know.
+
+In any case the corollary that you should take home is:
 
 $$
 SU(2) \text{ invariance} + \text{superselection rules} 
 \equiv SO(3) \text{ invariance} 
 $$
+
+
+## References 
+
+- Steven Weinberg, 1996. *The quantum theory of fields: Foundations*, volume 1.
+- Brian C. Hall, 2000. [An Elementary Introduction to Groups and Representations](https://arxiv.org/abs/math-ph/0005032)
+- Domenico Giulini, 2007. [Superselection Rules](https://arxiv.org/pdf/0710.1516.pdf)
