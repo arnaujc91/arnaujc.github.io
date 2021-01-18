@@ -19,29 +19,34 @@ pagination:
     <h2 class="blog-description">{{ site.blog_description }}</h2>
   </div>
 
-
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>
-        {% if post.image %}
-        <div class="float-left">
-          <a href="{{ post.url | relative_url }}">
-          <img class="img-fluid z-depth-1 rounded" src="{{ post.image | relative_url }}" href="{{ post.url | relative_url }}"/>
-          </a>
-          <p class="post-meta">{{ post.date | date: '%B %d, %Y' }}</p>
-        </div>
-        {% endif %}
-      <div class="clearfix">
-          <h3>
-            <a class="post-title" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
-          <p class="post-meta-description">{{ post.description }}</p>
-          {% unless post.image %}
-          <p class="post-meta">{{ post.date | date: '%B %d, %Y' }}</p>
-          {% endunless %}
+        <div class="container">
+          <div class="row">
+          {% if post.image %}
+            <div class="col-sm-4">
+              <figure>
+                <a href="{{ post.url | relative_url }}">
+                <img class="img-fluid z-depth-1 rounded mr-5" src="{{ post.image | relative_url }}" href="{{ post.url | relative_url }}" alt="Generic placeholder image">
+              </a>
+                <figcaption class="post-meta">{{ post.date | date: '%B %d, %Y' }}</figcaption>
+              </figure>
+            </div>
+            <div class="col-sm-8">
+          {% endif %}
+              <h3>
+                <a class="post-title" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+                {% unless post.image %}
+                <p class="post-meta">{{ post.date | date: '%B %d, %Y' }}</p>
+                {% endunless %}
+              </h3>
+              <p class="post-meta-description">{{ post.description }}</p>
+            </div>
           </div>
+        </div>
       </li>
     {% endfor %}
   </ul>
