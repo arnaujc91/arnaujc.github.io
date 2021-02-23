@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Arnau  Jimenez Castany | blank</title>
+<title>Arnau  Jimenez Castany</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/">
 
 <!-- Theming-->
 
@@ -75,9 +75,25 @@
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
     <div class="container">
       
-      <a class="navbar-brand title font-weight-lighter" href="/">
-       <span class="font-weight-bold">Arnau</span>   Jimenez Castany
-      </a>
+        <!-- Social Icons -->
+        <div class="ml-1 ml-sm-0">
+          <span class="contact-icon text-center">
+  <a href="mailto:%61%72%6E%61%75.%6A%63%39%31@%67%6D%61%69%6C.%63%6F%6D"><i class="fas fa-envelope"></i></a>
+  
+  
+  
+  
+  <a href="https://github.com/arnaujc91" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+  
+  
+  
+  
+  
+  
+  
+</span>
+
+        </div>
       
       <!-- Navbar Toogle -->
       <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,15 +105,17 @@
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
           <!-- About -->
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/">
               about
+              
+                <span class="sr-only">(current)</span>
               
             </a>
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -142,97 +160,113 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1 class="blog-title">Blog</h1>
-    <h2 class="blog-description">about Physics and Deep Learning</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">
+     <span class="font-weight-bold">Arnau</span>   Jimenez Castany
+    </h1>
+     <p class="desc"></p>
+  </header>
 
-  <ul class="post-list">
+  <article>
     
-      <li>
-        <div class="container">
-          <div class="row">
+    <div class="profile float-right text-center">
+      
+        <img class="img-fluid z-depth-1 rounded-circle m-2" src="/assets/img/prof_pic.png">
+      
+      
+        <div class="address">
           
-            <div class="col-sm-4">
-              <figure>
-                <a href="/blog/2021/Why-do-we-use-SU(2)-in-Quantum-Mechanics/">
-                <img class="img-fluid z-depth-1 rounded mr-5" src="/assets/img/schrodinger_eq.jpg" href="/blog/2021/Why-do-we-use-SU(2)-in-Quantum-Mechanics/" alt="Generic placeholder image">
-              </a>
-                <figcaption class="post-meta">January 09, 2021</figcaption>
-              </figure>
-            </div>
-            <div class="col-sm-8">
-          
-              <h3>
-                <a class="post-title" href="/blog/2021/Why-do-we-use-SU(2)-in-Quantum-Mechanics/">
-                  Why do we use SU(2) in Quantum Mechanics instead of SO(3)
-                </a>
-                
-              </h3>
-              <p class="post-meta-description">When we study rotation symmetry in quantum mechanics SU(2) is tipically used instead of SO(3). Why is it so is typically not well explained in undergraduate courses.</p>
-            </div>
-          </div>
         </div>
-      </li>
+      
+    </div>
     
-      <li>
-        <div class="container">
-          <div class="row">
-          
-            <div class="col-sm-4">
-              <figure>
-                <a href="/blog/2020/Bayesian-inference-for-parameter-estimation/">
-                <img class="img-fluid z-depth-1 rounded mr-5" src="/assets/img/bayes.jpg" href="/blog/2020/Bayesian-inference-for-parameter-estimation/" alt="Generic placeholder image">
-              </a>
-                <figcaption class="post-meta">November 16, 2020</figcaption>
-              </figure>
-            </div>
-            <div class="col-sm-8">
-          
-              <h3>
-                <a class="post-title" href="/blog/2020/Bayesian-inference-for-parameter-estimation/">
-                  Bayesian inference for parameter estimation
-                </a>
-                
-              </h3>
-              <p class="post-meta-description">Simple example of the Bayesian view of probability. We also show how the prior beliefs about the phenomena influence the posterior in the case of tossing coins.</p>
-            </div>
-          </div>
-        </div>
-      </li>
-    
-      <li>
-        <div class="container">
-          <div class="row">
-          
-            <div class="col-sm-4">
-              <figure>
-                <a href="/blog/2020/Naive_Bayes_for_text_classification/">
-                <img class="img-fluid z-depth-1 rounded mr-5" src="/assets/img/TextClassification.png" href="/blog/2020/Naive_Bayes_for_text_classification/" alt="Generic placeholder image">
-              </a>
-                <figcaption class="post-meta">November 11, 2020</figcaption>
-              </figure>
-            </div>
-            <div class="col-sm-8">
-          
-              <h3>
-                <a class="post-title" href="/blog/2020/Naive_Bayes_for_text_classification/">
-                  Naive Bayes for text classification
-                </a>
-                
-              </h3>
-              <p class="post-meta-description">Naive Bayes explained and used in an example for text classification. Coded from scratch for illustration purposes and also with scikitlearn.</p>
-            </div>
-          </div>
-        </div>
-      </li>
-    
-  </ul>
 
+    <div class="clearfix about">
+      <p>I am a software developer who studied theoretical physics. I did my bachelor’s degree at the <a href="https://www.uab.cat/">UAB</a> in Barcelona and my Master of Science at the <a href="https://www.uni-muenchen.de/index.html">LMU</a> in Munich. I am passionate about deep learning, physics and mathematics.</p>
+
+<p>My main programming language is Python and the libraries I use more frequently are: PyTorch, Fastai, Scikitlearn, Pandas, Numpy and Tensorflow. Furthermore I have some experience with Java, C and a tiny bit of front end technologies.</p>
+
+<p>I have worked both as a data scientist (NLP + computer vision) and as a software developer (Java + Angular). You can see the results of a face swapping algorithm that we developed at TNG <a href="https://www.heise.de/developer/meldung/Software-ermoeglicht-Deep-Fakes-in-Echtzeit-4500193.html">here</a>. Currently I am working as a Freelancer and searching for a Data Scientist position.</p>
+
+
+    </div>
+
+    
+      <div class="news mt-5">
+  <h2 class="font-weight-bold">News</h2>
   
+    <div class="table-responsive link">
+      <table class="table table-sm table-borderless">
+      
+      
+        <tr>
+          <th scope="row">Jan 8, 2021</th>
+          <td>
+            
+              <a href="https://openai.com/blog/dall-e/">DALL·E: Creating Images from Text</a>
 
+
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th scope="row">Dec 6, 2020</th>
+          <td>
+            
+              <a href="https://www.ft.com/content/2445c0e9-6c2b-4004-861b-c9c87f5950f2?fbclid=IwAR1BbAqmzVhojuBHhV5wCQl4CsLAWtzSEu4gl5IS18gBFry-I_-JGXFp4A0">Chinese researchers claim to have achieved quantum supremacy</a>
+
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th scope="row">Nov 30, 2020</th>
+          <td>
+            
+              <a href="https://www.nature.com/articles/d41586-020-03348-4?error=cookies_not_supported&amp;code=7df43497-56eb-4745-b214-8696843081ea">‘It will change everything’: DeepMind’s AI makes gigantic leap in solving protein structures</a>
+
+            
+          </td>
+        </tr>
+      
+      </table>
+    </div>
+  
+</div>
+
+    
+
+    
+
+    <!-- 
+    <div class="social">
+      <span class="contact-icon text-center">
+  <a href="mailto:%61%72%6E%61%75.%6A%63%39%31@%67%6D%61%69%6C.%63%6F%6D"><i class="fas fa-envelope"></i></a>
+  
+  
+  
+  
+  <a href="https://github.com/arnaujc91" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+  
+  
+  
+  
+  
+  
+  
+</span>
+
+      <div class="contact-note">You can even add a little note about which of these is the best way to reach you.
+</div>
+    </div>
+     -->
+  </article>
 
 </div>
+
+
+
 
     </div>
 

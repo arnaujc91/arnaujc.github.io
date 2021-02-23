@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Arnau  Jimenez Castany | Why do we use SU(2) in Quantum Mechanics instead of SO(3)</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2021/Why-do-we-use-SU(2)-in-Quantum-Mechanics/">
+
+<!-- Theming-->
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-187141110-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-187141110-1');
+  </script>
+
+
+    
+<!-- MathJax -->
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        tags: 'ams'
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">Arnau</span>   Jimenez Castany
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/videos/">
+                multimedia
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Why do we use SU(2) in Quantum Mechanics instead of SO(3)</h1>
+    <p class="post-meta">January 9, 2021</p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="symmetries-and-quantum-mechanics">Symmetries and Quantum Mechanics</h2>
+
+<p>Symmetries are a really powerful concept commonly used in physics. Think about <a href="https://en.wikipedia.org/wiki/Noether%27s_theorem">Noether’s theorem</a>, for every symmetry of the system there is a corresponding conserved quantity. These conserved quantites put certain constraints on the dynamics of the system, i.e. not everything is allowed and this is pretty good news for us, as it narrows down the set of possible solutions. Take a simple example, the <a href="https://en.wikipedia.org/wiki/Elastic_collision">ellastic collision</a> of two objects in classical mechanics; just using conservation of momentum and energy even a secondary school student can solve this problem. In particle physics, if you have charge conservation even though the particle can desintegrate into many other lighter particles, you know that the sum of the charges must still be the same—again restricting the space of possible solutions.</p>
+
+<p>Furthremore, symmetries have a group structure, in other words, the combination of two symmetry transformations is a symmetry transformation of the same kind (two composed rotations are still a rotation). Therefore usually symmetries and groups come hand in hand, and every symmetry is represented by a group. In this particular case we are going to talk about rotations or in more mathematical terms the $SO(3)$ group.</p>
+
+<p>As an undergraduate one valuable thing that I learned is that is better to study directly from books rather than lecture notes taken during the lecture. What I realized is that for every subject there are always these two or three books which are master pieces. In general all other books would be less deep, leaving many gaps unfilled, or will just refer to these master pieces.
+One of my favourite books about quantum mechanics and quantum field theory is <em>Quantum Theory of Fields: Foundations</em> from Steven Weinberg. If you really want to go deep into quantum mechanics and quantum field theory I strongly recommend you to at least take a look at its three first chapters.</p>
+
+<p>In the chapter 2.2 Weinberg explains how symmetries are realized in quantum mechanics: in the 1930’s Wigner proved that any symmetry transformation must be done through either a linear unitary operator U:</p>
+
+\[\begin{aligned}
+\langle \psi U | U \phi \rangle &amp;= \langle \psi  |  \phi \rangle \\
+U(\xi | \psi \rangle + \eta | \phi \rangle) &amp;= \xi U| \psi \rangle + \eta U | \phi \rangle
+\end{aligned}\]
+
+<p>or an antilinear and antiunitary operator U:</p>
+
+\[\begin{aligned}
+\langle \psi U | U \phi \rangle &amp;= \langle \psi  |  \phi \rangle \\
+U(\xi | \psi \rangle + \eta | \phi \rangle) &amp;= \xi^* U| \psi \rangle + \eta^* U | \phi \rangle
+\end{aligned}\]
+
+<p>on the states of the Hilbert space. The set of symmetry transformations are usually defined via a group action—if you are not familiar with group theory I strongly recommend you to take a look at <a href="https://arxiv.org/pdf/math-ph/0005032.pdf">this</a> lecture notes from Brian C. Hall. So given a group which represents the symmetry we want, in this case $SO(3)$, we need to find those matrices $U$ which fulfill Wigner’s theorem, i.e. we need to find a map $SO(3) \to U(n)$ where $U(n)$ is the set of $n \times n$ unitary matrices. This is called a <strong>unitary representation</strong>—again if you do not know what a represenation from a group is check the lectures from Brian.</p>
+
+<p>Bottom line: given a group $G$ if this group is a symmetry of the quantum system there must exist <em>at least</em> one unitary representation of the group. But given a group how many inequivalent and <strong>irreducible</strong> representations are there? Well in the case of $SO(3)$ it is well known that there exists a unitary irreducible—any representation can be decomposed as a direct sum of irreducible ones—representation for every odd dimension $d$, i.e. for every $d = 2l+1$, with $l\in \mathbb{N}$.</p>
+
+<h2 id="projective-representations">Projective Representations</h2>
+
+<p>Let’s start talking about what a represenation is:
+a representation of a group $G$ on a vector space $V$ is a map $\rho: \, G \to \text{GL} (V)$, such that the group operation is preserved $\rho(g_1 \cdot g_2) = \rho(g_1)\cdot \rho(g_2)$—i.e. the map is a group homomorphism. But as Wigner told us, for quantum mechanics we are not interested in any representation but rather just on the subset of representations which are (anti)unitary. Therefore the map is not the general map $\rho: \,G \to \text{GL}(V)$ but instead $\pi: \, G \to \text{U}(V)$ where $\text{U}(V)$ is the set of unitary matrices in the vector space $V$.</p>
+
+<p>But remember in your first course about quantum mechanics, they taught you that two vectors that differ by a phase are equivalent from a physical point of view, namely they represent the same physical state. Therefore we are allowed to relax slightly the conditions imposed by a representation. Instead if we find a map $\pi$ which is the analogous of a representation but up to a phase:</p>
+
+\[U(g_1)\cdot U(g_2) = e^{i\phi(g_1, g_2)} U(g_1 \cdot g_2)\]
+
+<p>we are still good to go.</p>
+
+<p>Remember what I told you in the previous section that $SO(3)$ has a representation in every vector space of odd dimension $d$? It turns out that $SO(3)$ has a projective representation for all vector spaces of integer dimension $d \in \mathbb{N}$. The representations for even dimension are called <a href="https://en.wikipedia.org/wiki/Spin_representation">spinorial representations</a>. More generally, for any projective unitary representation of $SO(3)$ we have:</p>
+
+<p>\begin{equation}
+U(R_1)\cdot U(R_2) = \pm U(R_1 \cdot R_2)
+\label{eq:projective}
+\end{equation}</p>
+
+<p>The representations of odd dimension they always have a positive sign (integer spin) while the representations of even dimensions (half integer spin) wil have a positive or negative sign depending on how the elements $R_1$ and $R_2$ are connected in the corresponding group.</p>
+
+<h2 id="relation-between-su2-and-so3">Relation between SU(2) and SO(3)</h2>
+
+<p>Projective representations can arise in two ways:</p>
+
+<ul>
+  <li>
+    <p>Algebraically: if the <em>central charge</em> of the Lie algebra can not be removed.</p>
+  </li>
+  <li>
+    <p>Topologically: If the group is not <em>simply connected</em>.</p>
+  </li>
+</ul>
+
+<p>Because the Lie algebra of $SO(3)$ is semi-simple there is a general theorem which states that any central charges in semi-simple Lie algebras may always be removed by a redifinition of its generators. On the other hand $SO(3)$ is not simply connected, therefore all its projective representations originate from the topology. In fact, $SO(3)$ is <em>doubly</em> connected, informally this means that for any loop to be contractible to a point it must go around the manifold twice.</p>
+
+<p>Now let’s listen to the master, Weinberg explains (page 90):</p>
+
+<blockquote>
+  <p>Even though a Lie group $G$ may not be simply connected, it can always be expressed as $C/H$, where $C$ is a simply connected group known as the <a href="https://en.wikipedia.org/wiki/Covering_group"><strong>universal covering group</strong></a> of $G$, and $H$ is an invariant subgroup of $C$.</p>
+</blockquote>
+
+<p>In the case of $SO(3)$ the universal cover is $SU(2)$ and the invariant subgroup is $\mathbb{Z}_2 = \{1,-1\}$. The universal cover has no intrinsic projective representations, therefore all its representations are in the same footing, i.e. there is no phase anymore.</p>
+
+<h2 id="differences-between-su2-and-so3-invariance">Differences between SU(2) and SO(3) invariance</h2>
+
+<p>Here comes the tricky part. Again we must quote Weinberg (p. 89):</p>
+
+<blockquote>
+  <p>Equation \eqref{eq:projective} imposes a <a href="https://arxiv.org/pdf/0710.1516.pdf">superselection rule</a>: we must not mix states of integer and half-integer spin.</p>
+</blockquote>
+
+<p>and again:</p>
+
+<blockquote>
+  <p>Instead of working with projective representations and imposing a superseleciton rule, we can just as well expand the Rotation group, taking it as $SU(2)$ itself, instead of $SU(2)/Z_2$ as before. Ordinary rotation invariance forbids transitions between states of integer and half-integer total spins, so the only difference is that now the group is simply-connected, and it therefore has only ordinary representations, not projective representations, so that we cannot infer a superselection rule. This does not mean that we actually can prepare physical systems in linear combinations of states of integer and half-integer spin, but only that the observed rotation invariance of nature cannot be used to show that such superpositions are impossible.</p>
+</blockquote>
+
+<p>So be careful because while the original $SO(3)$ group imposed a superselection rule (SSR)—due to its projective representations—the universal cover $SU(2)$ do <em>not</em>. In both cases the total spin is a conserved quantity, the difference relies in the fact that (in principle) one could prepare a system in a superposition of states of integer and half-integer spin in the case of $SU(2)$ while this seems to be impossible for $SO(3)$. In both cases though if the state is in a pure fermionic state at some instance of time, it will remain a pure fermionic state at any other instance of time.</p>
+
+<!-- It's worth expliclty stating the difference between a superselection rule (SSR) and a selection rule (SR). Two states $\lvert \psi_1 \rangle, \lvert \psi_2 \rangle $ are separated by a SR/SSR if:
+
+$$
+\begin{aligned}
+\text{SSR} &: \quad \langle \psi_1 | H | \psi_2 \rangle = 0 \\[2mm]
+\text{SR} &: \quad  \langle \psi_1 | A | \psi_2 \rangle = 0  \quad \text{for ALL observables A}.
+\end{aligned}
+$$ -->
+
+<p>Then it continues:</p>
+
+<blockquote>
+  <p>it may or it may not be possible to prepare physical systems in arbitrary superpositions of states, but one cannot settle the question by reference to symmetry principles, because whatever one thinks the symmetry group of nature may be, there is always another group whose consequnces are identical except for the absence of superselection rules.</p>
+</blockquote>
+
+<p>I must admit that this last quote confuses me. If the superposition was possible, this would automatically rule out $SO(3)$, so it seems to me that one can indeed settle the question by symmetry principles. What does Weinberg mean by that? I do not know.</p>
+
+<p>In any case the corollary that you should take home is:</p>
+
+\[SU(2) \text{ invariance} + \text{superselection rules} 
+\equiv SO(3) \text{ invariance}\]
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>Steven Weinberg, 1996. <em>The quantum theory of fields: Foundations</em>, volume 1.</li>
+  <li>Brian C. Hall, 2000. <a href="https://arxiv.org/abs/math-ph/0005032">An Elementary Introduction to Groups and Representations</a></li>
+  <li>Domenico Giulini, 2007. <a href="https://arxiv.org/pdf/0710.1516.pdf">Superselection Rules</a></li>
+</ul>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2021 Arnau  Jimenez Castany.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+</html>

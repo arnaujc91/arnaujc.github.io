@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Arnau  Jimenez Castany | Bayesian inference for parameter estimation</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2020/Bayesian-inference-for-parameter-estimation/">
+
+<!-- Theming-->
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-187141110-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-187141110-1');
+  </script>
+
+
+    
+<!-- MathJax -->
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        tags: 'ams'
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">Arnau</span>   Jimenez Castany
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/videos/">
+                multimedia
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Bayesian inference for parameter estimation</h1>
+    <p class="post-meta">November 16, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="introduction">Introduction</h2>
+
+<p>In this post we are going to describe how <a href="https://en.wikipedia.org/wiki/Bayesian_statistics">Bayesian statistics</a> are used to model probabilistic phenomena. If you are new in statistics I recommend you to read a little about the differences between Bayesian and Frequentist approaches to inference—<a href="https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading20.pdf">this</a> for example. I must admit I felt quite confused at the beginning but if you want a brief summary about the differences, I would say that in the Frequentist school the parameters of the distribution are <em>assumed</em> to be fixed, while in the Bayesian they each (parameter) have <em>another</em> probability distribution associated to them—i.e. how probable is the given value of the parameter.</p>
+
+<p>Imagine we have a set of events/data ($\mathcal{D}$) and we want to fit a probability distribution ($P$) to describe these
+events. First we have to pick a probability distribution, and second we need to estimate 
+which are the paremeters ($\theta$) that fit the data the best.</p>
+
+<p>Fitting the parameters can be done using Bayesian (or Frequentist) inference. Choosing the model will be 
+up to you and the success of it will depend on your intuition.</p>
+
+<p>Let’s start explaining Bayes’ formula:</p>
+
+\[\overbrace{P(\theta\mid \mathcal{D})}^\text{posterior} = \frac{\overbrace{P(\mathcal{D}\mid \theta)}^\text{likelihood}\times\overbrace{P(\theta)}^\text{prior}}{\underbrace{P(\mathcal{D})}_\text{Evidence or marginal likelihood}} \, , \qquad \,  P(\mathcal{D}) = \int P(\mathcal{D}\mid 
+\theta)P(\theta)\, d\theta\]
+
+<p>In this formula we find two sets of variables that play a role:</p>
+<ul>
+  <li>$\theta$ : represents the variables that we want to estimate from a predefined probability distribution—the mean and variance of a Gaussian for example.</li>
+  <li>$\mathcal{D}$ : represents the observed data or events. We will use this data to estimate the parameters $\theta$.</li>
+</ul>
+
+<p>Let’s put into words what each term in that equation means:</p>
+<ul>
+  <li>$P(\theta \mid \mathcal{D})$ : Probability of $\theta$ being the true value given the data $\mathcal{D}$.</li>
+  <li>$P( \mathcal{D} \mid \theta)$ : Probability of seeing the data $\mathcal{D}$ given the model parameters $\theta$.</li>
+  <li>$P(\theta)$ : Probability that the model parameters $\theta$ being realized.</li>
+  <li>$P(\mathcal{D})$ : Probability that the data is created by <em>any</em> of the possible models parametrized by $\theta$.</li>
+</ul>
+
+<h2 id="example-tossing-coins">Example: tossing coins</h2>
+
+<p>The experiment is the following: someone is presented to us with a coin, a priori we do not know if the coin is biased or not, therefore we are going to throw the coin a number of times and see the results. From there we will be able to extract certain information and draw some conclusions.
+That is indeed how inference works, the main assumption is that there is an underlying—and unknown—probability distribution, let’s call it $P^*$, which we want to estimate. In order to do so you take several samples that come from this unknown distribution and try to fit a model $P$ which approximates its behaviour.</p>
+
+<p>In order to model the coin tossing we are going to choose a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial distribution</a>:</p>
+
+\[P(\mathcal{D}\mid \theta) = \binom{N_1}{n_1} \,\theta^{N_1-n_1}(1-\theta)^{n_1}\, ,\]
+
+<p>which is a sensible choice given that the coin outputs are not correlated and are binary. In general this will be a choice of yours to decide which distribution $P(\mathcal{D}\mid \theta) $ fits best your phenomena.
+In this case the data is $\mathcal{D} = \{N_1,n_1\}$ where:</p>
+<ul>
+  <li>$N_1$ : the number of times that we have flipped the coin,</li>
+  <li>$n_1$ : the number of times we have got heads.</li>
+</ul>
+
+<p>Now, our <em>bias</em> about the parameter $\theta$ (i.e. if we think the coin is fair or not) is encoded in the prior distribution $P(\theta)$. Let’s imagine that 3 players are going to play together against some adversary in the coin flipping game. One of the players is a pessimist so he thinks the coin is going to be clearly biased, another player is just highly skeptical and believes all possibilities are equally probable and a physicist who after examining carefully the coin he is quite confident the coin is fair.</p>
+
+\[P(\theta) =       \begin{cases}
+       1 &amp;\quad\text{Skeptic},\\[2mm]
+       2\cdot \mathcal{N}(1,0.1) &amp;\quad\text{Pessimist}, \\[2mm]
+        \mathcal{N}(0.5,0.1) &amp;\quad\text{Physicist}
+     \end{cases}\]
+
+<p>Where $\mathcal{N}(\mu,\sigma)$ is the <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a>. Remember that $\theta \in [0,1]$, therefore $P(\theta)$ is just defined in this range. Note that all the priors are normalized in the range $[0,1]$, i.e.</p>
+
+\[\int_0^1 P(\theta)\, d\theta = 1\, , \quad \text{For all players}\]
+
+<p>Let’s plot the Priors for each case:</p>
+
+<p><img class="img-fluid center" src="/assets/img/prior.png" /></p>
+
+<p>Now we flip the coin $N_1 = 30$ times and let’s see what happens to the posteriors for two different outcomes:</p>
+<ul>
+  <li><strong>Case one</strong>: 30 tosses, 15 heads,</li>
+  <li><strong>Case two</strong>: 30 tosses, 6 heads.</li>
+</ul>
+
+<div class="row mt-5">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid img-responsive" src="/assets/img/Bayes_30_15.png" />
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid img-responsive" src="/assets/img/Bayes_30_6.png" />
+    </div>
+</div>
+
+<p><strong>Case one</strong>: We see that when the data points to the case where the coin is fair, both the pysicist and the skeptic give the highest probability to $\theta = 1/2$. But there is a difference, which is the width of the distributions. As you can see the physicist has a narrower distribution around $\theta = 1/2$ meaning that he is more confident than the skeptic that the coin is fair. On the other hand the pessimist is still thinking that the coin is biased, he believes that the coin is not 100% biased but he does not have a high confidence that the true value of $\theta$ is $1/2$.</p>
+
+<p><strong>Case two</strong>: Here the skeptic believes that the true value of $\theta$ is $6/30=0.2$. The skeptic will always give the highest probability to $\theta$ to the frequency of heads in the data. On the other hand the physicist believes that the most probable value is now $0.32$ while the pessimist believes that the most probable value is $0.56$.</p>
+
+<p>So always the data $\mathcal{D}$ updates the previous beliefs $P(\theta)$ of each of the players. Here you can see how the bias influences the posterior probability. But not so fast, you might feel a bit suspicious that the final outcome depends on the person who performs the experiment. After all, isn’t science based on the assumption that the results of experiments are independent on the person who carries them out? Well, Bayesian statistics have generated a lot of controversy and the fact that the prior is subjective is one of its main critics.</p>
+
+<p>We can keep iterating this process. So our beliefs have been updated after observing the data. Now let’s assume we have a second step, we observe new data $\mathcal{D}_2 = \{N_2, n_2\}$. What we are going to do is use the updated beliefs $P(\theta\mid \mathcal{D}_1)$ as the prior for $\mathcal{D}_2$.</p>
+
+\[P(\theta \mid \mathcal{D}_2) = \frac{P(\mathcal{D}_2\mid \theta)\times P(\theta\mid \mathcal{D_1})}{P(\mathcal{D}_2)}\, , \qquad P(\mathcal{D}_2) = \int_0^1 P(\mathcal{D}_2\mid \theta)P(\theta\mid \mathcal{D_1}) \, d\theta\]
+
+<p>As you can see you can keep updating your beliefs in the parameter $\theta$ every time that you observe new data.
+After $m$ iterations we would have:</p>
+
+\[P(\theta \mid \mathcal{D}_{m+1}) \propto P(\theta) \prod_{i = 1}^{m} P(\mathcal{D}_i\mid \theta) \equiv  P(\theta) \mathcal{L}_m (\theta)\]
+
+<p>Where the function $\mathcal{L}_m$ is the so-called <strong>likelihood</strong> function after $m$ samples of data have been observed.</p>
+
+<p>So, in general after $m$ observations we will have:</p>
+
+\[P(\theta \mid \mathcal{D}_m, \ldots , \mathcal{D}_1) = \frac{P(\mathcal{D}_m, \ldots , \mathcal{D}_1\mid \theta)P(\theta)}{P(\mathcal{D}_1, \ldots , \mathcal{D}_m)}\]
+
+<p>It is worth mentioning that in general:</p>
+
+\[\mathcal{L}_m (\theta) = P(\mathcal{D}_m, \ldots , \mathcal{D}_1\mid \theta) \neq \prod_{i = 1}^{m} P(\mathcal{D}_i\mid \theta)\]
+
+<p>The last inequality just becomes equality when the events $\mathcal{D}_1,\ldots, \mathcal{D}_n$ are considered to be <em>independent</em>, which is a common assumption in the Machine Learning community.</p>
+
+<p>If you wonder what the Frequentist approach to this problem would be, it is quite easy: the frequentist would look for the parameters $\hat{\theta}$ that maximize the probability of observing the data $\mathcal{D}_1, \ldots, \mathcal{D}_n$. This is known as <strong>Maximum Likelihood Estimation</strong> (MLE):</p>
+
+\[\hat{\theta} = \underset{\theta}{\operatorname{arg\;max}}\,  \mathcal{L}_m (\theta)\]
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://towardsdatascience.com/probability-concepts-explained-bayesian-inference-for-parameter-estimation-90e8930e5348">Probability concepts explained: Bayesian inference for parameter estimation.</a></li>
+  <li><a href="http://www.stat.cmu.edu/~larry/=sml/Bayes.pdf">Bayesian Inference - Carnegie Mellon University</a></li>
+  <li><a href="https://www.freecodecamp.org/news/statistical-inference-showdown-the-frequentists-vs-the-bayesians-4c1c986f25de/">Statistical Inference Showdown: The Frequentists VS The Bayesians</a></li>
+</ul>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2021 Arnau  Jimenez Castany.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+</html>
