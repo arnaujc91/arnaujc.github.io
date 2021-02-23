@@ -2,7 +2,7 @@
 layout: post
 title: Why do we use SU(2) in Quantum Mechanics instead of SO(3)
 image: /assets/img/schrodinger_eq.jpg
-description: When we study rotation symmetry in quantum mechanics SU(2) is tipically used instead of SO(3). Why is it so is tipically not well explained in undergraduate courses.
+description: When we study rotation symmetry in quantum mechanics SU(2) is tipically used instead of SO(3). Why is it so is typically not well explained in undergraduate courses.
 ---
 
 ## Symmetries and Quantum Mechanics
